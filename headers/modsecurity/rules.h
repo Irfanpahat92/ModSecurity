@@ -13,5 +13,37 @@
  *
  */
 
-#include <modsecurity/rules_set.h>
+#include <stdio.h>
+#include <string.h>
+
+#ifdef __cplusplus
+#include <ctime>
+#include <iostream>
+#include <string>
+#include <vector>
+#include <list>
+#endif
+
+
+#ifndef HEADERS_MODSECURITY_RULES_H_
+#define HEADERS_MODSECURITY_RULES_H_
+
+#include "modsecurity/rules_set_properties.h"
+#include "modsecurity/modsecurity.h"
+#include "modsecurity/transaction.h"
+#include "modsecurity/rule.h"
+
+#ifdef __cplusplus
+namespace modsecurity {
+
+
+class Rules : public std::vector<Rule *> {
+ public:
+};
+
+
+}  // namespace modsecurity
+#endif
+
+#endif  // HEADERS_MODSECURITY_RULES_H_
 
