@@ -39,6 +39,13 @@ namespace modsecurity {
 
 class Rules : public std::vector<Rule *> {
  public:
+
+    void dump() {
+        for (int j = 0; j < size(); j++) {
+            std::cout << "    Rule ID: " << std::to_string(at(j)->m_ruleId);
+            std::cout << "--" << at(j) << std::endl;
+        }
+    }
 };
 
 

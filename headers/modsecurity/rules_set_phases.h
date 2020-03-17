@@ -90,6 +90,15 @@ class RulesSetPhases {
         return amount_of_rules;
     }
 
+    void dump() {
+        for (int i = 0; i < modsecurity::Phases::NUMBER_OF_PHASES; i++) {
+            std::cout << "Phase: " << std::to_string(i);
+            std::cout << " (" << std::to_string(m_rules[i].size());
+            std::cout << " rules)" << std::endl;
+            m_rules[i].dump();
+        }
+    }
+
     Rules *operator[](int index) { return &m_rules[index]; }
     Rules *at(int index) { return &m_rules[index]; }
 
